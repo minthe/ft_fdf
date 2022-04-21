@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/21 19:17:51 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/04/21 21:46:53 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <mlx.h>
 # include <stdio.h>
 
-typedef struct	s_vars {
+typedef struct s_fdf
+{
 	void	*mlx;
 	void	*win;
-}				t_vars;
+}	t_fdf;
 
-int	main(int argc, char *argv[]);
 
 #endif
