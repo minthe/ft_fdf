@@ -1,7 +1,7 @@
 SHELL	= /bin/sh
 
 NAME =	fdf
-srcs =	main.c \
+
 
 OBJECTS = $(subst .c,.o,$(SOURCES))
 
@@ -13,15 +13,17 @@ LIBFT_DIR		= ./libft
 X11_INC			= /usr/X11/include
 X11_LIB			= /usr/X11/lib
 
-LFLAGS 			= -L${LIBFT_DIR} -L${MINILIBX_DIR} -L${X11_LIB} \
-				-lmlx -framework OpenGL -framework Appkit
+LFLAGS 			= -L${LIBFT_DIR} -L${MINILIBX_DIR} -L${X11_LIB} -lmlx -lXext -lX11 -lft
 
 IDIR			= .
 IFLAGS			= -I${IDIR} -I${LIBFT_DIR} -I${MINILIBX_DIR} -I${X11_INC}
 
+SRCS =	main.c \
+
 RM = rm -f
 
 ${NAME} : ${SRCS}
+		@make -C ${LIBFT_DIR}
 		@make -C ${MINILIBX_DIR}
 		${CC} ${CFLAGS} ${SRCS} ${IFLAGS} ${LFLAGS} -o ${NAME}
 
@@ -37,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus debug
+.PHONY: all clean fclean re
