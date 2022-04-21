@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/21 15:40:16 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2021/08/21 01:22:09 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2021/08/23 17:55:17 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <mlx.h>
-
-int	main(void);
-
-#endif
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	while (n--)
+	{
+		if ((*(unsigned char *)s) == (unsigned char)c)
+			return ((void *)s);
+		s++;
+	}
+	return (NULL);
+}

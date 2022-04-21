@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/21 15:40:16 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2021/08/22 09:33:04 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2021/08/22 13:12:09 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <mlx.h>
+char	*ft_strdup(const char *s1)
+{
+	char	*new;
+	size_t	len;
 
-int	main(void);
-
-#endif
+	len = ft_strlen(s1);
+	new = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new)
+		return (NULL);
+	ft_strlcpy(new, s1, len + 1);
+	return (new);
+}

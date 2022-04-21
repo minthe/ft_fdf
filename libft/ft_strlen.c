@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/21 15:40:16 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2021/07/09 20:24:52 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2021/08/23 17:56:39 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <mlx.h>
+size_t	ft_strlen(const char *s)
+{
+	size_t	counter;
 
-int	main(void);
-
-#endif
+	counter = 0;
+	while (s[counter])
+	{
+		counter ++;
+	}
+	return (counter);
+}

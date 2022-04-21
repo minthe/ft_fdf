@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/21 15:40:16 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2021/08/22 09:16:21 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2021/08/22 11:46:17 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <mlx.h>
+static int	ft_min(int a, int b)
+{
+	if (a > b)
+		return (b);
+	else
+		return (a);
+}
 
-int	main(void);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t	dlen;
+	size_t	slen;
 
-#endif
+	dlen = ft_strlen(dst);
+	slen = ft_strlen(src);
+	if (dstsize > dlen)
+		ft_strlcpy(dst + dlen, src, dstsize - dlen);
+	return (ft_min(dstsize, dlen) + slen);
+}

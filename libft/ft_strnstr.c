@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/21 15:40:16 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2021/08/21 17:11:10 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2021/08/22 20:55:19 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <mlx.h>
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	nlen;
 
-int	main(void);
-
-#endif
+	nlen = ft_strlen(needle);
+	if (!nlen)
+		return ((char *)haystack);
+	while (len && *haystack)
+	{
+		if (ft_strncmp(haystack, needle, nlen) == 0)
+			return ((char *)haystack);
+		if (len <= nlen)
+			break ;
+		len--;
+		haystack++;
+	}
+	return (NULL);
+}

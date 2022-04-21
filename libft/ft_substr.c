@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/21 15:40:16 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2021/08/22 14:35:00 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2021/08/23 16:46:05 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <mlx.h>
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*sub;
 
-int	main(void);
-
-#endif
+	if (!s)
+		return (NULL);
+	sub = (char *)ft_calloc(sizeof(char), (len + 1));
+	if (!sub)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (sub);
+	ft_strlcpy(sub, (s + start), len + 1);
+	return (sub);
+}

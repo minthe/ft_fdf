@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/21 15:40:16 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2021/08/21 13:34:46 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2021/08/23 17:21:02 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <mlx.h>
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	unsigned char	*us1;
+	unsigned char	*us2;
 
-int	main(void);
-
-#endif
+	us1 = (unsigned char *)s1;
+	us2 = (unsigned char *)s2;
+	while (n)
+	{
+		if (*us1 != *us2)
+			return (*us1 - *us2);
+		if (!*us1 || !*us2)
+			break ;
+		us1++;
+		us2++;
+		n--;
+	}
+	return (0);
+}
