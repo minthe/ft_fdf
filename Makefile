@@ -13,12 +13,16 @@ LIBFT_DIR		= ./libft
 X11_INC			= /usr/X11/include
 X11_LIB			= /usr/X11/lib
 
-LFLAGS 			= -L${LIBFT_DIR} -L${MINILIBX_DIR} -L${X11_LIB} -lmlx -lXext -lX11 -lft
+LFLAGS 			= -L${LIBFT_DIR} -L${MINILIBX_DIR} -L${X11_LIB} -lmlx -lXext -lX11 -lft -lm
 
 IDIR			= .
 IFLAGS			= -I${IDIR} -I${LIBFT_DIR} -I${MINILIBX_DIR} -I${X11_INC}
 
 SRCS =	main.c \
+		fdf.c \
+		./gnl/get_next_line.c \
+		./gnl/get_next_line_utils.c \
+
 
 RM = rm -f
 
