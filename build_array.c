@@ -1,36 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   build_array.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/09 15:52:30 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2022/05/09 15:58:01 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2022/05/09 16:00:33 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
-
-# include <unistd.h>
-# include <mlx.h>
-# include <stdio.h>
-# include <math.h>
-# include "./gnl/get_next_line.h"
-
-typedef struct s_fdf
+int	count_lines(char *argv[])
 {
-	void	*mlx;
-	void	*win;
-}	t_fdf;
-
-typedef struct s_point
-{
-	int		value;
-	int		trgb;
-}	t_point;
-
-int	draw_line(void *mlx, void *win, int beginX, int beginY, int endX, int endY, int color);
-
-#endif
+	char	*line;
+	int fd = open(argv[1], O_RDONLY);
+}

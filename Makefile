@@ -20,6 +20,7 @@ IFLAGS			= -I${IDIR} -I${LIBFT_DIR} -I${MINILIBX_DIR} -I${X11_INC}
 
 SRCS =	main.c \
 		fdf.c \
+		draw_line.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
 
