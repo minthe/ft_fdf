@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/09 15:52:30 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/10 10:46:14 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ typedef struct s_point
 }	t_point;
 
 int	draw_line(void *mlx, void *win, int beginX, int beginY, int endX, int endY, int color);
-
+int	count_lines(char *argv[]);
 #endif
