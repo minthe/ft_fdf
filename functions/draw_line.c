@@ -6,11 +6,11 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:52:09 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/10 10:50:11 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:33:49 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../fdf.h"
 
 int draw_line(void *mlx, void *win, int beginX, int beginY, int endX, int endY, int color)
 {
