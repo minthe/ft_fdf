@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 14:33:32 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:30:03 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include <math.h>
 # include "./gnl/get_next_line.h"
 
+typedef struct s_point
+{
+	int		value;
+	int		trgb;
+	int		x;
+	int		y;
+}	t_point;
+
 typedef struct s_fdf
 {
 	void	*mlx;
@@ -28,16 +36,9 @@ typedef struct s_fdf
 	char	*map;
 }	t_fdf;
 
-typedef struct s_point
-{
-	int		value;
-	int		trgb;
-	int		x;
-	int		y;
-}	t_point;
-
 int		draw_line(t_fdf data, t_point p1, t_point p2);
 int		count_lines(char *map);
+int		count_colums(char *map);
 void	initialize_map(t_fdf data);
 void	fdf(t_fdf data);
 
