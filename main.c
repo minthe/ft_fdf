@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 15:37:21 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 15:37:46 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:48:05 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,10 @@ int	main(int argc, char *argv[])
 	data.win = mlx_new_window(data.mlx, 640, 360, "FdF");
 	data.lines = count_lines(data.map);
 	data.colums = count_colums(data.map);
-	fdf(data);
+	printf("lines before: %d\n", data.lines); // debugging
+	fdf(&data);
 	print_lines(data.map); // debugging
-	printf("lines: %d\n", data.lines);
+	printf("lines after: %d\n", data.lines); // debugging
 	mlx_loop(data.mlx);
 	return (0);
 }
