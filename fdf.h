@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 12:14:34 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:33:32 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,22 @@ typedef struct s_fdf
 {
 	void	*mlx;
 	void	*win;
+	int		colums;
+	int		lines;
+	char	*map;
 }	t_fdf;
 
 typedef struct s_point
 {
 	int		value;
 	int		trgb;
+	int		x;
+	int		y;
 }	t_point;
 
-int		draw_line(void *mlx, void *win, int beginX, int beginY, int endX, int endY, int color);
-int		count_lines(char *argv[]);
-void	initialize_map(t_fdf data, char *argv[]);
-void	fdf(t_fdf data, char *argv[]);
+int		draw_line(t_fdf data, t_point p1, t_point p2);
+int		count_lines(char *map);
+void	initialize_map(t_fdf data);
+void	fdf(t_fdf data);
 
 #endif

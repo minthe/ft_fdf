@@ -6,14 +6,14 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:37:51 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 12:14:48 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:51:17 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-void	initialize_map(t_fdf data, char *argv[])
+// parses data into struct and validates if map is rectangular
+void	initialize_map(t_fdf data)
 {
-	printf("lines:%d\n", count_lines(argv));
-	printf("lines:%p\n", data.win);
+	data.lines = count_lines(data.map);
 }
