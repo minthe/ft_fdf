@@ -6,12 +6,13 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 15:37:21 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 20:00:46 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/11 20:04:16 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
+// (for debbuging) -> Prints the Input-Map
 static void	print_lines(char *map)
 {
 	char	*line;
