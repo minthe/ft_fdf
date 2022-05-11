@@ -5,9 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 18:37:51 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/22 19:16:45 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2022/05/11 12:05:23 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2022/05/11 12:14:25 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	fdf(t_fdf data, char *argv[])
+{
+	initialize_map(data, argv);
+}

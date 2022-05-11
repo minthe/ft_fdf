@@ -22,6 +22,7 @@ SRCS =	main.c \
 		fdf.c \
 		./functions/draw_line.c \
 		./functions/count_lines.c \
+		./functions/initialize_map.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
 
