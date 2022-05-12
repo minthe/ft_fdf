@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:37:51 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 20:00:13 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/12 17:08:06 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,8 @@ void	initialize_map(t_fdf *data)
 	data->win = mlx_new_window(data->mlx, 640, 360, "FdF");
 	data->lines = count_lines(data->map);
 	data->colums = count_colums(data->map);
+	data->height = (int **) malloc(sizeof(int) * data->lines);
+	if (data->height == NULL)
+		return ;
+	while ()
 }

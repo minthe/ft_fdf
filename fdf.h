@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 19:49:08 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:57:58 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ typedef struct s_fdf
 	int		colums;
 	int		lines;
 	char	*map;
+	int		**height;
+	char	**color;
+	struct	s_point point;
 }	t_fdf;
 
 int		draw_line(t_fdf *data, t_point *p1, t_point *p2);
