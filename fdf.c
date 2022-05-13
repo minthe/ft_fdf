@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:05:23 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 20:03:09 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:43:26 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,6 @@ void	fdf(t_fdf *data)
 {
 	data->lines = 15; // debugging
 	printf("fdf.c\n");
+	draw_line(data, 255, 50);
+	draw_line(data, 140, 130);
 }
