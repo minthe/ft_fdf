@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 15:37:21 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/12 17:05:38 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/13 13:26:10 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char *argv[])
 	data.map = argv[1];
 	initialize_map(&data);
 	fdf(&data);
-	print_lines(data.map);
+	print_lines(data.map); // debugging
 	mlx_loop(data.mlx);
 	return (0);
 }

@@ -6,7 +6,7 @@ NAME =	fdf
 OBJECTS = $(subst .c,.o,$(SOURCES))
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1
 
 MINILIBX_DIR	= ./minilibx-linux
 LIBFT_DIR		= ./libft

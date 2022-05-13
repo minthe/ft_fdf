@@ -6,13 +6,13 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:52:09 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/11 19:51:45 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/13 13:21:55 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
-
-int draw_line(t_fdf *data, t_point *p1, t_point *p2)
+/*
+int draw_line(t_fdf *data)
 {
 	double deltaX = p2->x - p1->x; // 10
 	double deltaY = p2->y - p1->y; // 0
@@ -31,3 +31,4 @@ int draw_line(t_fdf *data, t_point *p1, t_point *p2)
 	}
 	return (0);
 }
+*/
