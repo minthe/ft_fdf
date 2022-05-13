@@ -6,29 +6,31 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:52:09 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/13 13:21:55 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:33:13 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
-/*
-int draw_line(t_fdf *data)
-{
-	double deltaX = p2->x - p1->x; // 10
-	double deltaY = p2->y - p1->y; // 0
-	int pixels = sqrt((deltaX * deltaX) + (deltaY * deltaY));
-	deltaX /= pixels; // 1
-	deltaY /= pixels; // 0
 
-	double pixelX = p1->x;
-	double pixelY = p1->y;
-	while (pixels)
+int	draw_line(t_fdf *data, int p1, int p2)
+{
+	t_draw	draw;
+
+	draw.delta_x = p2 - p1;
+	draw.delta_y = p2 - p1;
+	draw.pixels = sqrt((draw.delta_x * draw.delta_x) \
+	+ (draw.delta_y * draw.delta_y));
+	draw.delta_x /= draw.pixels;
+	draw.delta_y /= draw.pixels;
+	draw.pixel_x = p1;
+	draw.pixel_y = p1;
+	while (draw.pixels)
 	{
-		mlx_pixel_put(data->mlx, data->win, pixelX, pixelY, p1->trgb);
-		pixelX += deltaX;
-		pixelY += deltaY;
-		--pixels;
+		mlx_pixel_put(data->mlx, data->win, draw.pixel_x, \
+		draw.pixel_y, data->color[p1][p2]);
+		draw.pixel_x += draw.delta_x;
+		draw.pixel_y += draw.delta_y;
+		--draw.pixels;
 	}
 	return (0);
 }
-*/
