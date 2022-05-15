@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:37:51 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/13 13:23:40 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:06:50 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	initialize_map(t_fdf *data)
 	int	x;
 
 	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, 640, 360, "FdF");
-	printf("colums: %d\n", count_colums(data->map));
+	data->img = mlx_new_image(data->mlx, 500, 500);
+	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, &data->line_length, &data->endian);
 	data->lines = count_lines(data->map);
 	data->colums = count_colums(data->map);
 	data->height = (int **) ft_calloc(sizeof(int *), data->lines);

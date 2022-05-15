@@ -24,6 +24,7 @@ SRCS =	main.c \
 		./functions/count_lines.c \
 		./functions/count_colums.c \
 		./functions/initialize_map.c \
+		./functions/my_mlx_pixel_put.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
 
