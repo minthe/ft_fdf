@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 15:37:21 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 19:45:56 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:32:33 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ static void	print_values(t_fdf data)
 	{
 		while(x < data.colums)
 		{
-			printf("%d ", data.height[y][x]);
+			if (data.height[y][x] > 9)
+				printf("%d ", data.height[y][x]);
+			else
+				printf("%d  ", data.height[y][x]);
 			x++;
 		}
 		printf("\n");
