@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:05:23 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 15:22:33 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:11:08 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,38 @@ void	fdf(t_fdf *data)
 {
 	t_point	p1;
 	t_point	p2;
+	int x;
+	int y;
+	int scale;
 
-	p1.x = 15;
-	p1.y = 20;
-	p2.x = 300;
-	p2.y = 150;
-	draw_line(data, &p2, &p1);
+	scale = 15;
+	x = 0;
+	y = 0;
+	while(y < data->lines)
+	{
+		while(x < data->colums)
+		{
+			if (y < (data->lines - 1))
+			{
+				p1.x = x * scale;
+				p1.y = y * scale;
+				p2.x = x * scale;
+				p2.y = (y + 1) * scale;
+				draw_line(data, &p2, &p1);
+			}
+			if (x < (data->colums - 1))
+			{
+				p1.x = x * scale;
+				p1.y = y * scale;
+				p2.x = (x + 1) * scale;
+				p2.y = y * scale;
+				draw_line(data, &p2, &p1);
+			}
+			x++;
+		}
+		x = 0;
+		y++;
+	}
 	my_mlx_pixel_put(data, 5, 5, 0x00FF0000);
 	mlx_put_image_to_window(data->mlx, data->win, data->image->img, 0, 0);
 }

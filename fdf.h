@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 17:28:58 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:01:55 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ typedef struct s_fdf
 {
 	void	*mlx;
 	void	*win;
+	int		win_size_x;
+	int		win_size_y;
 	int		colums;
 	int		lines;
 	char	*map;

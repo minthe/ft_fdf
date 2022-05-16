@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:26:32 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 18:18:25 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 19:38:42 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,29 @@ void	fills_grid(t_fdf *data)
 	int	y;
 	int x;
 	int fd;
-	char **line;
+	char *line;
+	char **values;
 
 	y = 0;
 	x = 0;
 	fd = open(data->map, O_RDONLY);
-	line = ft_split(get_next_line(fd), ' ');
-	while (y < data->lines)
+	line = get_next_line(fd);
+	while (y < data->lines && line)
 	{
 		data->height[y] = (int *) ft_calloc(sizeof(int), data->colums);
 		if (data->height[y] == NULL)
 			return ;
+		values = ft_split(line, ' ');
 		while (x < data->colums)
 		{
-			data->height[y][x] = ft_atoi(line[x]);
+			data->height[y][x] = ft_atoi(values[x]);
 			x++;
 		}
+		x = 0;
 		free(line);
-		line = ft_split(get_next_line(fd), ' ');
+		free(values); // todo
+		line = get_next_line(fd);
 		y++;
 	}
-	free(line);
 	close(fd);
 }

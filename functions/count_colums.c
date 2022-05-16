@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:28:50 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 18:17:00 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 19:37:44 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ int	count_colums(t_fdf *data)
 	int		fd;
 	char	**colums;
 
-	colums = ft_split(line, ' ');
 	fd = open(data->map, O_RDONLY);
 	data->colums = 0;
 	line = get_next_line(fd);
+	colums = ft_split(line, ' ');
 	while (colums[data->colums])
 		data->colums++;
 	free(line);
+	free(colums); // todo
 	close(fd);
 	return (data->colums);
 }
