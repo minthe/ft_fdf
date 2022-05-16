@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:28:50 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 17:15:16 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 18:17:00 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	count_colums(t_fdf *data)
 {
 	char	*line;
 	int		fd;
-	char	*colums;
+	char	**colums;
 
 	colums = ft_split(line, ' ');
 	fd = open(data->map, O_RDONLY);

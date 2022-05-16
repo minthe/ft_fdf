@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_colum.c                                       :+:      :+:    :+:   */
+/*   fills_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 17:16:45 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 17:21:28 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2022/05/16 17:26:32 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2022/05/16 18:18:25 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-// fills colum
-void	fill_colum(t_fdf *data)
+void	fills_grid(t_fdf *data)
 {
-	char	*line;
-	char	*colum;
-	int		fd;
-	int		i;
+	int	y;
+	int x;
+	int fd;
+	char **line;
 
-	colum = ft_split(line, ' ');
+	y = 0;
+	x = 0;
 	fd = open(data->map, O_RDONLY);
-	line = get_next_line(fd);
-	while (i < data->colums)
+	line = ft_split(get_next_line(fd), ' ');
+	while (y < data->lines)
 	{
-		data->height[]
-		i++;
+		data->height[y] = (int *) ft_calloc(sizeof(int), data->colums);
+		if (data->height[y] == NULL)
+			return ;
+		while (x < data->colums)
+		{
+			data->height[y][x] = ft_atoi(line[x]);
+			x++;
+		}
+		free(line);
+		line = ft_split(get_next_line(fd), ' ');
+		y++;
 	}
 	free(line);
 	close(fd);
 }
-
