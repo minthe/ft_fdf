@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_mlx_pixel_put.c                                 :+:      :+:    :+:   */
+/*   utilities.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/14 18:55:58 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 11:47:12 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2022/05/16 11:54:06 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2022/05/16 11:58:44 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color)
+void	exit_perror(char *c)
 {
-	char	*dst;
-
-	dst = data->image->addr + (y * data->image->line_length + x * (data->image->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	perror(c);
+	exit(EXIT_FAILURE);
 }
-

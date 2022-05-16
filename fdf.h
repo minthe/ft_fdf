@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/14 18:57:15 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:58:35 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 # include <math.h>
 # include "./gnl/get_next_line.h"
 # include "./libft/libft.h"
+
+typedef struct s_image
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_image;
 
 typedef struct s_draw
 {
@@ -38,12 +47,7 @@ typedef struct s_fdf
 	char	*map;
 	int		**height;
 	int		**color;
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-	
+	t_image	*image;
 }	t_fdf;
 
 int		draw_line(t_fdf *data, int p1, int p2);
@@ -52,5 +56,6 @@ int		count_colums(char *map);
 void	initialize_map(t_fdf *data);
 void	fdf(t_fdf *data);
 void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color);
+void	exit_perror(char *c);
 
 #endif
