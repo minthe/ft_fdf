@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:52:09 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/13 17:39:47 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:39:56 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	draw_line(t_fdf *data, int p1, int p2)
 	draw.pixel_y = p1;
 	while (draw.pixels)
 	{
-		mlx_pixel_put(data->mlx, data->win, draw.pixel_x, \
+		my_mlx_pixel_put(data, draw.pixel_x, \
 		draw.pixel_y, 0x00FF0000);
 		draw.pixel_x += draw.delta_x;
 		draw.pixel_y += draw.delta_y;

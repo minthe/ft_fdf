@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:37:51 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 12:04:35 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:26:51 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	initialize_map(t_fdf *data)
 	data->image = ft_calloc(sizeof(t_image), 1);
 	if (!data->mlx || !data->win || !data->image)
 		exit_perror(NULL);
-	data->mlx = mlx_new_window(data->mlx, 500, 500, "fdf");
+	data->win = mlx_new_window(data->mlx, 500, 500, "fdf");
 	data->image->img = mlx_new_image(data->mlx, 500, 500);
 	data->image->addr = mlx_get_data_addr(data->image->img, &data->image->bits_per_pixel, &data->image->line_length, &data->image->endian);
 	data->lines = count_lines(data->map);
