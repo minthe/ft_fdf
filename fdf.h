@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 11:58:35 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:28:58 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,17 @@ typedef struct s_fdf
 	t_image	*image;
 }	t_fdf;
 
-int		draw_line(t_fdf *data, int p1, int p2);
+typedef struct s_point
+{
+	int x;
+	int y;
+	int z;
+}	t_point;
+
+int		draw_line(t_fdf *data, t_point *p1, t_point *p2);
 int		count_lines(char *map);
-int		count_colums(char *map);
+int		count_colums(t_fdf *data);
+void	fills_grid(t_fdf *data);
 void	initialize_map(t_fdf *data);
 void	fdf(t_fdf *data);
 void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color);
