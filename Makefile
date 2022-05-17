@@ -6,7 +6,7 @@ NAME =	fdf
 OBJECTS = $(subst .c,.o,$(SOURCES))
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1
+CFLAGS = -g -Wall -Wextra -Werror -D BUFFER_SIZE=1
 
 MINILIBX_DIR	= ./minilibx-linux
 LIBFT_DIR		= ./libft
@@ -27,6 +27,7 @@ SRCS =	main.c \
 		./functions/initialize_map.c \
 		./functions/my_mlx_pixel_put.c \
 		./functions/utilities.c \
+		./functions/isometric.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
 

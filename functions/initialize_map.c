@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:37:51 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 20:02:18 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:46:37 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 // parses data into struct and validates if map is rectangular
 void	initialize_map(t_fdf *data)
 {
-	data->win_size_x = 500;
-	data->win_size_y = 300;
+	data->win_size_x = 1920;
+	data->win_size_y = 1080;
 	data->mlx = mlx_init();
 	data->image = ft_calloc(sizeof(t_image), 1);
 	if (!data->mlx || !data->win || !data->image)

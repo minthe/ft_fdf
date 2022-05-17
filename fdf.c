@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:05:23 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 20:11:08 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:47:39 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ void	fdf(t_fdf *data)
 	int y;
 	int scale;
 
-	scale = 15;
+	scale = 70;
 	x = 0;
 	y = 0;
+	
 	while(y < data->lines)
 	{
 		while(x < data->colums)
@@ -32,16 +33,24 @@ void	fdf(t_fdf *data)
 			{
 				p1.x = x * scale;
 				p1.y = y * scale;
+				p1.z = data->height[y][x];
 				p2.x = x * scale;
 				p2.y = (y + 1) * scale;
+				p2.z = data->height[y][x];
+				isometric(&p1.x, &p1.y, p1.z);
+				isometric(&p2.x, &p2.y, p2.z);
 				draw_line(data, &p2, &p1);
 			}
 			if (x < (data->colums - 1))
 			{
 				p1.x = x * scale;
 				p1.y = y * scale;
+				p1.z = data->height[y][x];
 				p2.x = (x + 1) * scale;
 				p2.y = y * scale;
+				p2.z = data->height[y][x];
+				isometric(&p1.x, &p1.y, p1.z);
+				isometric(&p2.x, &p2.y, p2.z);
 				draw_line(data, &p2, &p1);
 			}
 			x++;
