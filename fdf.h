@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/17 19:22:59 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:25:33 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include <math.h>
 # include "./gnl/get_next_line.h"
 # include "./libft/libft.h"
+
+# define WINDOWS_W 1920
+# define WINDOWS_H 1080
 
 typedef struct s_image
 {
