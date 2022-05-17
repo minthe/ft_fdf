@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:05:23 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/17 18:36:12 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:09:39 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ void	fdf(t_fdf *data)
 	t_point	p2;
 	int x;
 	int y;
-	int scale;
-	int scale_h;
-	int offset_x;
 
-	scale = 10;
-	offset_x = 100;
-	scale_h = 1;
+	data->scale = 10;
+	data->offset_x = 100;
+	data->offset_y = 50;
+	data->scale_h = 1;
 	x = 0;
 	y = 0;
 	
@@ -35,24 +33,24 @@ void	fdf(t_fdf *data)
 		{
 			if (y < (data->lines - 1))
 			{
-				p1.x = x * scale + offset_x;
-				p1.y = y * scale - offset_x + 50;
-				p1.z = data->height[y][x] * scale_h;
-				p2.x = x * scale + offset_x;
-				p2.y = (y + 1) * scale - offset_x + 50;
-				p2.z = data->height[y + 1][x] * scale_h;
+				p1.x = x * data->scale + data->offset_x;
+				p1.y = y * data->scale - data->offset_y;
+				p1.z = data->height[y][x] * data->scale_h;
+				p2.x = x * data->scale + data->offset_x;
+				p2.y = (y + 1) * data->scale - data->offset_y;
+				p2.z = data->height[y + 1][x] * data->scale_h;
 				isometric(&p1.x, &p1.y, p1.z);
 				isometric(&p2.x, &p2.y, p2.z);
 				draw_line(data, &p2, &p1);
 			}
 			if (x < (data->colums - 1))
 			{
-				p1.x = x * scale + offset_x;
-				p1.y = y * scale - offset_x + 50;
-				p1.z = data->height[y][x] * scale_h;
-				p2.x = (x + 1) * scale + offset_x;
-				p2.y = y * scale - offset_x + 50;
-				p2.z = data->height[y][x + 1] * scale_h;
+				p1.x = x * data->scale + data->offset_x;
+				p1.y = y * data->scale - data->offset_y;
+				p1.z = data->height[y][x] * data->scale_h;
+				p2.x = (x + 1) * data->scale + data->offset_x;
+				p2.y = y * data->scale - data->offset_y;
+				p2.z = data->height[y][x + 1] * data->scale_h;
 				isometric(&p1.x, &p1.y, p1.z);
 				isometric(&p2.x, &p2.y, p2.z);
 				draw_line(data, &p2, &p1);

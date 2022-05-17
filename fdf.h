@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/17 18:24:32 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:22:59 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ typedef struct s_fdf
 	char	*map;
 	int		**height;
 	int		**color;
+	int		offset_x;
+	int		offset_y;
+	int		scale;
+	int		scale_h;
 	t_image	*image;
 }	t_fdf;
 
