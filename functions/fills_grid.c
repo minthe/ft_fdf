@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:26:32 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 19:38:42 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:48:19 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ void	fills_grid(t_fdf *data)
 		while (x < data->colums)
 		{
 			data->height[y][x] = ft_atoi(values[x]);
+			free(values[x]); // todo
 			x++;
 		}
 		x = 0;
 		free(line);
-		free(values); // todo
+		free(values);
 		line = get_next_line(fd);
 		y++;
 	}
