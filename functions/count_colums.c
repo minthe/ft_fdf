@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:28:50 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 19:37:44 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 18:37:11 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	count_colums(t_fdf *data)
 	while (colums[data->colums])
 		data->colums++;
 	free(line);
-	free(colums); // todo
+	free_array(colums);
 	close(fd);
 	return (data->colums);
 }

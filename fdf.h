@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 16:43:46 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:40:26 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,12 @@ int		count_colums(t_fdf *data);
 int		close_fdf(t_fdf *data);
 int		key_cmd(int key, t_fdf *data);
 void	fills_grid(t_fdf *data);
+void	free_array(char **arr);
 void	initialize_map(t_fdf *data);
 void	fdf(t_fdf *data);
 void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color);
 void	exit_perror(char *c);
+void	error_msg(char *errmsg);
 void	isometric(int *x, int *y, int z);
 
 #endif

@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_lines.c                                      :+:      :+:    :+:   */
+/*   error_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 15:58:01 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 19:30:43 by vfuhlenb         ###   ########.fr       */
+/*   Created: 2022/05/19 19:36:45 by vfuhlenb          #+#    #+#             */
+/*   Updated: 2022/05/19 19:40:03 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-// returns lines
-int	count_lines(char *map)
+void	error_msg(char *errmsg)
 {
-	char	*line;
-	int		x;
-	int		fd;
-
-	fd = open(map, O_RDONLY);
-	if (fd == -1)
-		return (-1);
-	x = 0;
-	line = get_next_line(fd);
-	while (line > 0)
-	{
-		free(line);
-		line = get_next_line(fd);
-		x++;
-	}
-	close(fd);
-	return (x);
+	ft_putendl_fd(errmsg, 2);
+	exit(EXIT_FAILURE);
 }
