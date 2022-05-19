@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 19:40:26 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 21:00:49 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ typedef struct s_draw
 	double	pixel_y;
 }	t_draw;
 
+typedef struct s_point
+{
+	int	x;
+	int	y;
+	int	z;
+}	t_point;
+
 typedef struct s_fdf
 {
 	void	*mlx;
@@ -50,15 +57,13 @@ typedef struct s_fdf
 	char	*map;
 	int		**height;
 	int		scale;
+	int		scale_h;
+	int		offset_x;
+	int		offset_y;
 	t_image	*image;
+	t_point	p1;
+	t_point	p2;
 }	t_fdf;
-
-typedef struct s_point
-{
-	int x;
-	int y;
-	int z;
-}	t_point;
 
 int		draw_line(t_fdf *data, t_point *p1, t_point *p2);
 int		count_lines(char *map);
@@ -71,6 +76,7 @@ void	initialize_map(t_fdf *data);
 void	fdf(t_fdf *data);
 void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color);
 void	exit_perror(char *c);
+void	render_fdf(t_fdf *data);
 void	error_msg(char *errmsg);
 void	isometric(int *x, int *y, int z);
 

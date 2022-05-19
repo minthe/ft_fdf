@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:05:23 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 19:05:28 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 21:15:22 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,9 @@
 // handles the map and interactions with mlx
 void	fdf(t_fdf *data)
 {
-	t_point	p1;
-	t_point	p2;
-	int x;
-	int y;
-
-	data->scale = 10;
-	x = 0;
-	y = 0;
-	
-	while(y < data->lines)
-	{
-		while(x < data->colums)
-		{
-			if (y < (data->lines - 1))
-			{
-				p1.x = x * data->scale;
-				p1.y = y * data->scale;
-				p1.z = data->height[y][x];
-				p2.x = x * data->scale;
-				p2.y = (y + 1) * data->scale;
-				p2.z = data->height[y + 1][x];
-				isometric(&p1.x, &p1.y, p1.z);
-				isometric(&p2.x, &p2.y, p2.z);
-				draw_line(data, &p2, &p1);
-			}
-			if (x < (data->colums - 1))
-			{
-				p1.x = x * data->scale;
-				p1.y = y * data->scale;
-				p1.z = data->height[y][x];
-				p2.x = (x + 1) * data->scale;
-				p2.y = y * data->scale;
-				p2.z = data->height[y][x + 1];
-				isometric(&p1.x, &p1.y, p1.z);
-				isometric(&p2.x, &p2.y, p2.z);
-				draw_line(data, &p2, &p1);
-			}
-			x++;
-		}
-		x = 0;
-		y++;
-	}
-	my_mlx_pixel_put(data, 5, 5, 0x00FF0000);
-	mlx_put_image_to_window(data->mlx, data->win, data->image->img, 0, 0);
+	data->scale = 70;
+	data->offset_x = data->win_size_x / 5;
+	data->offset_y = (data->win_size_y / 3) * -1;
+	data->scale_h = 1;
+	render_fdf(data);
 }

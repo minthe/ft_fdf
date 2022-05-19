@@ -32,6 +32,7 @@ SRCS =	main.c \
 		./functions/isometric.c \
 		./functions/free_array.c \
 		./functions/error_msg.c \
+		./functions/render_fdf.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
 
