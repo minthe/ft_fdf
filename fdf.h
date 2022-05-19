@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 14:37:23 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:01:26 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <math.h>
 # include "./gnl/get_next_line.h"
 # include "./libft/libft.h"
-# include </opt/X11/include/X11/keysym.h>
+# include <X11/keysym.h>
 
 typedef struct s_image
 {

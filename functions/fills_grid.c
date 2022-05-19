@@ -6,11 +6,22 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:26:32 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 14:48:19 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:02:07 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
+
+static void	free_values(char *line, char **values, int x)
+{
+	free(line);
+	while (x > 0)
+	{
+		free(values[x - 1]);
+		x--;
+	}
+	free(values);
+}
 
 void	fills_grid(t_fdf *data)
 {
@@ -33,14 +44,12 @@ void	fills_grid(t_fdf *data)
 		while (x < data->colums)
 		{
 			data->height[y][x] = ft_atoi(values[x]);
-			free(values[x]); // todo
 			x++;
 		}
 		x = 0;
-		free(line);
-		free(values);
 		line = get_next_line(fd);
 		y++;
 	}
 	close(fd);
+	free_values(line, values, data->lines);
 }
