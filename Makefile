@@ -28,6 +28,7 @@ SRCS =	main.c \
 		./functions/my_mlx_pixel_put.c \
 		./functions/utilities.c \
 		./functions/isometric.c \
+		./functions/key_bindings.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
 

@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:05:23 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/17 19:09:39 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/18 09:24:40 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	fdf(t_fdf *data)
 	int x;
 	int y;
 
-	data->scale = 10;
-	data->offset_x = 100;
-	data->offset_y = 50;
-	data->scale_h = 1;
+	data->scale = 60;
+	data->offset_x = 400;
+	data->offset_y = 350;
+	data->scale_h = 3;
 	x = 0;
 	y = 0;
 	
