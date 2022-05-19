@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 13:10:14 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 16:20:44 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:58:19 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	close_fdf(t_fdf *data)
 	while (data->lines > 0)
 	{
 		free(data->height[data->lines - 1]);
+		while(data->colums > 0)
+		{
+			free(&data->height[data->colums - 1]);
+			data->colums--;
+		}
 		data->lines--;
 	}
 	free(data->map);

@@ -6,19 +6,23 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:26:32 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 16:02:07 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:58:12 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-static void	free_values(char *line, char **values, int x)
+static void	free_values(char **values, int lines, int colums)
 {
-	free(line);
-	while (x > 0)
+	while (lines > 0)
 	{
-		free(values[x - 1]);
-		x--;
+		free(values[lines - 1]);
+		while (colums > 0)
+		{
+			free(&values[colums - 1]);
+			colums--;
+		}
+		lines--;
 	}
 	free(values);
 }
@@ -49,7 +53,8 @@ void	fills_grid(t_fdf *data)
 		x = 0;
 		line = get_next_line(fd);
 		y++;
+		free_values(values, data->lines, data->colums);
 	}
 	close(fd);
-	free_values(line, values, data->lines);
+	free(line);
 }
