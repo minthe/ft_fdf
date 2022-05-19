@@ -26,6 +26,7 @@ SRCS =	main.c \
 		./functions/fills_grid.c \
 		./functions/initialize_map.c \
 		./functions/my_mlx_pixel_put.c \
+		./functions/close_fdf.c \
 		./functions/utilities.c \
 		./functions/isometric.c \
 		./gnl/get_next_line.c \

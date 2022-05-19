@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/17 17:15:56 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:54:30 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_point
 int		draw_line(t_fdf *data, t_point *p1, t_point *p2);
 int		count_lines(char *map);
 int		count_colums(t_fdf *data);
+int		close_fdf(t_fdf *data);
 void	fills_grid(t_fdf *data);
 void	initialize_map(t_fdf *data);
 void	fdf(t_fdf *data);
