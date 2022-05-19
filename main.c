@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 15:37:21 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/16 20:32:33 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:39:59 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int	main(int argc, char *argv[])
 	fdf(&data);
 //	print_lines(data.map); // debugging
 	print_values(data);
+	mlx_hook(data.win, 17, 0, close_fdf, &data);
+	mlx_key_hook(data.win, key_cmd, fdf);
 	mlx_loop(data.mlx);
 	return (0);
 }
