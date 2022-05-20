@@ -6,14 +6,14 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 19:36:45 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 19:40:03 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:15:24 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-void	error_msg(char *errmsg)
+void	error_msg(t_fdf *data, char *errmsg)
 {
 	ft_putendl_fd(errmsg, 2);
-	exit(EXIT_FAILURE);
+	close_fdf(data);
 }

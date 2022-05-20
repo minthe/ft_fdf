@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 20:18:14 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/20 18:20:55 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:21:15 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void static	render_menu(t_fdf *data)
 	mlx_string_put(data->mlx, data->win, x, y + 70, 0xFFFFF0, \
 	"Height: +, -");
 	mlx_string_put(data->mlx, data->win, x, y + 90, 0xFFFFF0, \
+	"Reset: r");
+	mlx_string_put(data->mlx, data->win, x, y + 110, 0xFFFFF0, \
 	"Exit: ESC");
 }
 

@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/20 17:19:25 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:19:38 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	fdf(t_fdf *data);
 void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color);
 void	exit_perror(char *c);
 void	render_fdf(t_fdf *data);
-void	error_msg(char *errmsg);
+void	error_msg(t_fdf *data, char *errmsg);
 void	isometric(int *x, int *y, int z);
 
 #endif
