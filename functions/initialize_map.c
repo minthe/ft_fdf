@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:37:51 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/20 19:14:15 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/20 22:13:49 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	initialize_map(t_fdf *data)
 	&data->image->line_length, &data->image->endian);
 	data->lines = count_lines(data->map);
 	if (data->lines < 1)
-		error_msg(data, "empty map");
+		error_msg(data, "Invalid map");
 	data->colums = count_colums(data);
 	data->height = (int **) ft_calloc(sizeof(int *), data->lines);
 	if (data->height == NULL)
