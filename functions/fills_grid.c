@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:26:32 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/20 19:17:01 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:51:27 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ void static	handle_values(t_fdf *data, char **values, int *y)
 		if (!values[x])
 		{
 			free_array(values);
-			error_msg("invalid map");
+			error_msg(data, "Invalid map");
+		}
+		else if (ft_atoi(values[x]) < -999 || ft_atoi(values[x]) > 999)
+		{
+			free_array(values);
+			error_msg(data, "Map height exceeds limit of +-999px");
 		}
 		data->height[*y][x] = ft_atoi(values[x]);
 		x++;
