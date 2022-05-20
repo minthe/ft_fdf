@@ -6,13 +6,13 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:05:23 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 21:15:22 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:23:00 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-// handles the map and interactions with mlx
+// initialize parameters and renders the window
 void	fdf(t_fdf *data)
 {
 	data->scale = 70;

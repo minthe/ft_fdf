@@ -6,11 +6,30 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 20:18:14 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 21:13:47 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:20:55 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
+
+void static	render_menu(t_fdf *data)
+{
+	int	x;
+	int	y;
+
+	x = data->win_size_x - (data->win_size_x / 10);
+	y = data->win_size_y / 18;
+	mlx_string_put(data->mlx, data->win, x, y, 0xFFFFF0, \
+	"FdF @vfuhlenb");
+	mlx_string_put(data->mlx, data->win, x, y + 30, 0xFFFFF0, \
+	"Move: a, d, w, s");
+	mlx_string_put(data->mlx, data->win, x, y + 50, 0xFFFFF0, \
+	"Zoom: i, o");
+	mlx_string_put(data->mlx, data->win, x, y + 70, 0xFFFFF0, \
+	"Height: +, -");
+	mlx_string_put(data->mlx, data->win, x, y + 90, 0xFFFFF0, \
+	"Exit: ESC");
+}
 
 void static	render_y(t_fdf *data)
 {
@@ -66,6 +85,7 @@ void static	render_x(t_fdf *data)
 	}
 }
 
+// destroys image and renders new pixels
 void	render_fdf(t_fdf *data)
 {
 	ft_bzero(data->image->addr, data->win_size_x * \
@@ -73,4 +93,5 @@ void	render_fdf(t_fdf *data)
 	render_x(data);
 	render_y(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->image->img, 0, 0);
+	render_menu(data);
 }
