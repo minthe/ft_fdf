@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:38:02 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/20 19:19:38 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/21 17:34:49 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include "./gnl/get_next_line.h"
 # include "./libft/libft.h"
 # include <X11/keysym.h>
+
+# define WIN_WIDTH 1280
+# define WIN_HEIGHT 720
 
 typedef struct s_image
 {

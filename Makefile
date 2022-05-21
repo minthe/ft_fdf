@@ -6,8 +6,7 @@ NAME =	fdf
 OBJECTS = $(subst .c,.o,$(SOURCES))
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1
-
+CFLAGS = -Wall -Wextra -Werror -g
 MINILIBX_DIR	= ./minilibx-linux
 LIBFT_DIR		= ./libft
 X11_INC			= /usr/X11/include

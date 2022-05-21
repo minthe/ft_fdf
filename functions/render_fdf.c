@@ -6,13 +6,13 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 20:18:14 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/20 19:57:32 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/21 17:12:58 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-void static	render_menu(t_fdf *data)
+static void	render_menu(t_fdf *data)
 {
 	int	x;
 	int	y;
@@ -33,7 +33,7 @@ void static	render_menu(t_fdf *data)
 	"Exit: ESC");
 }
 
-void static	render_y(t_fdf *data)
+static void	render_y(t_fdf *data)
 {
 	int	x;
 	int	y;
@@ -60,7 +60,7 @@ void static	render_y(t_fdf *data)
 	}
 }
 
-void static	render_x(t_fdf *data)
+static void	render_x(t_fdf *data)
 {
 	int	x;
 	int	y;

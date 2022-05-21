@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:21:53 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/22 20:51:07 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/21 16:58:44 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <limits.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 84
+#  define BUFFER_SIZE 1
 # endif
 
 # ifndef OPEN_MAX

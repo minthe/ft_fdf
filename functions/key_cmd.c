@@ -6,13 +6,13 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:18:43 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/20 19:57:09 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/21 17:12:32 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-void static	reset_values(t_fdf *data)
+static void	reset_values(t_fdf *data)
 {
 	data->scale = 70;
 	data->offset_x = data->win_size_x / 5;

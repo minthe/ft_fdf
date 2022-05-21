@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 19:08:43 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/04/22 20:50:56 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/21 17:30:00 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ char	*get_line(char **line, char **buffer_static)
 	if (ft_strchr(*buffer_static, '\n'))
 	{
 		*line = ft_substr(*buffer_static, 0, xline + 1);
-		*buffer_static = ft_strdup(*buffer_static + xline + 1);
+		if (ft_strlen(*buffer_static + xline + 1))
+			*buffer_static = ft_strdup(*buffer_static + xline + 1);
+		else
+			*buffer_static = NULL;
 	}
 	else
 	{

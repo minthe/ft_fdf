@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:58:01 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/19 19:30:43 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/21 17:12:16 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	count_lines(char *map)
 		return (-1);
 	x = 0;
 	line = get_next_line(fd);
-	while (line > 0)
+	while (line != NULL)
 	{
 		free(line);
 		line = get_next_line(fd);
