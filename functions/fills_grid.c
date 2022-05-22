@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:26:32 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/22 13:30:33 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/22 15:10:55 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static void	check_validity(t_fdf *data, char **values)
 
 	x = 0;
 	i = 0;
-	while (x < data->colums)
+	while (values[x])
 	{
 		while (values[x][i])
 		{
 			if ((ft_isdigit(values[x][i]) == 0) && values[x][i] != '\n')
 			{
 				free_array(values);
-				error_msg(data, "-- Invalid Map --\n");
+				error_msg(data, "-- Invalid value in Map --\n");
 			}
 			i++;
 		}
