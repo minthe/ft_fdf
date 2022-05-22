@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 19:40:00 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2021/08/23 17:00:19 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/22 13:32:26 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_countwords(char *s, char c)
 	count = 1;
 	while (s[i])
 	{
-		if ((s[i] == c) && (s[i + 1] != c) && s[i + 1])
+		if ((s[i] != c) && (s[i + 1] == c) && s[i + 1])
 			count++;
 		i++;
 	}
