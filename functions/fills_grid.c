@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:26:32 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/21 20:58:04 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:58:26 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ static void	handle_values(t_fdf *data, char **values, int *y)
 	x = 0;
 	while (x < data->colums)
 	{
-		if (!values[x] || (x == data->colums - 1 && values[x + 1] \
-			&& values[x + 1][0] != ' '))
+		if (!values[x] || (x == data->colums - 1 && values[x + 1]))
 		{
 			free_array(values);
 			error_msg(data, "invalid map");
