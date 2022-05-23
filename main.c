@@ -6,13 +6,13 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 15:37:21 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2022/05/20 22:30:02 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2022/05/23 17:35:53 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-// FdF rev1
+// FdF "evaluated version"
 int	main(int argc, char *argv[])
 {
 	t_fdf	data;
