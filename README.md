@@ -1,6 +1,5 @@
 # FDF Project
 
-## Description
 The "FDF" project is an implementation of a wireframe renderer for three-dimensional maps.
 This project is designed to read a map file containing altitude data and display it as a wireframe using simple graphical libraries such as minilibx.
 
